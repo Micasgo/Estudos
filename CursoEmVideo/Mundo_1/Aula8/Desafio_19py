@@ -1,0 +1,22 @@
+# Um professor quer sortear um dos seus quatro alunos para apagar o quadro.
+# Faça um programa que ajude ele, lendo o nome deles e escrevendo o nome do escolhido
+
+import random
+cabeca = random.randint(1,4)
+
+n1 = input('Diga um nome')
+n2 = input('Diga um nome')
+n3 = input('Diga um nome')
+n4 = input('Diga um nome')
+
+if cabeca == 1:
+    print(n1)
+    exit()
+if cabeca == 2:
+    print(n2)
+    exit()
+if cabeca == 3:
+    print(n3)
+    exit()
+else:
+    print (n4)
