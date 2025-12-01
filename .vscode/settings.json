@@ -1,0 +1,10 @@
+{
+    "editor.dropIntoEditor.preferences": [
+
+
+    ],
+    "editor.fontFamily": "Fira Code",
+    "editor.formatOnPaste": true,
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontLigatures.enabled": true
+}
