@@ -2,7 +2,7 @@
 # mostrando em seguida o primeiro e o último nome separadamente.
 
 
-nome = str(input("Qual o seu nome? :"))
+nome = str(input("Qual o seu nome? :")).strip()
 
 print("Seu nome é", nome)
 print("A primeira palavra é", nome.split()[0])
