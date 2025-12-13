@@ -18,3 +18,14 @@ if len(num) == 3:
 
 if len(num) == 4:
     print("Milhar: {}\nCentena: {}\nDezena: {}\nUnidade: {}".format(num[0],num[1],num[2],num[3]))
+
+n = int(num)
+mil = n // 1000
+cen = n // 100 - mil*10
+uni = n % 10
+dez = (n % 100 - uni)/10
+
+print(mil)
+print(cen)
+print(int(dez))
+print(uni)
