@@ -20,5 +20,7 @@ if escolha == 1:
     print(f"O número {numero} em binário é {str(bin(numero)).replace(lixo1,"")}")
 elif escolha == 2:
     print(f"O número {numero} em octal é {str(oct(numero)).replace(lixo2,"")}")
-else:
+elif escolha == 3:
     print(f"O número {numero} em hexadecimal é {str(hex(numero)).replace(lixo3,"")}")
+else:
+    print("Opção inválida")

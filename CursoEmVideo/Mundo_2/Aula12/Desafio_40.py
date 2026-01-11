@@ -1,45 +1,30 @@
 """
-A Confederação Nacional de Natação precisa de um programa que leia o ano
-de nascimento de um atleta e mostre sua categora, de acordo com a idade:
-- Até 9 anos: Mirim
-- Até 14 anos: Infantil
-- Até 19 anos: Junior
-- Até 20 anos: Sênior
-- Acima: Master
+Crie um programa que leia duas notas de um aluno e calcule sua média,
+mostrando uma mensagem no final, de acordo com a média atingida:
+- Média abaixo de 5.0: Reprovado
+- Média entre 5.0 e 6.9: Recuperação
+- Média 7.0 ou superior: Aprovado
 """
+atividades = int(input("Quantas atividades foram feitas?: "))
 
-from datetime import date
+lista = []
 
-ano = int(input("Qual o ano de nascimento?: "))
-mes = int(input("Qual o mês de nascimento?: "))
-dia = int(input("Qual o dia do nascimento?: "))
+total = 0
 
-data = str(date.today())
+for i in range(atividades):
+    nota = float((input(f"Qual foi a {i+1}° nota do aluno? :")).replace(",","."))
+    lista.append(nota)
 
-anoAtual = int(data[:4])
-mesAtual = int(data[5:7])
-diaAtual = int(data[8:10])
+for i in range(len(lista)):
+    total += float(lista[i])
 
-idade = anoAtual - ano
+media = total/len(lista)
 
-
-if mes > mesAtual:
-        idade -=1
-elif mes <= mesAtual and dia > diaAtual:
-        idade -=1
-
-
-if idade <= 9:
-    print(f"Com {idade} anos, foi qualificado para Categoria Mirim")
-
-elif idade > 9 and idade <= 14:
-    print(f"Com {idade} anos, foi qualificado para Categoria Infantil")
-
-elif idade > 14 and idade <= 19:
-    print(f"Com {idade} anos, foi qualificado para Categoria Junior")
-
-elif idade == 20:
-    print(f"Com {idade} anos, foi qualificado para Categoria Sênior")
-
-elif idade > 20:
-    print(f"Com {idade} anos, foi qualificado para Categoria Master")
+if media < 5:
+    print(f"Média final, {media:.2f}:\033[;31m REPROVADO\033[m")
+elif media >= 5 and media < 7:
+    print (f"Média final, {media:.2f}: \033[;33m RECUPERAÇÃO\033[m")
+elif media >= 7 and media <= 10:
+    print (f"Média final, {media:.2f}: \033[;32m APROVADO\033[m")
+else:
+    print (f"Média final, 10:\033[;32m APROVADO\033[m")

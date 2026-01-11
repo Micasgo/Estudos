@@ -15,9 +15,6 @@ def criar_aviso(texto=str, estilo=cores.normal, cor=cores.vermelho):
    
     print(f"{f'{cor}'.replace("0",str(estilo))}{texto}{cores.reset}")
 
-criar_aviso("Eu sou burro",cores.normal,cores.vermelho)
-
-
 valorCasa = float((input("Qual o valor da casa a ser comprada?: ")).replace(",",".").strip())
 
 salario = float((input("Qual o seu salário?: ")).replace(",",".").strip())
@@ -27,11 +24,15 @@ duracao = int((input("Em quantos anos planeja pagar o valor da casa?: ")).strip(
 limite = valorCasa / (duracao*12)
 
 if limite > salario*0.3:
-    print("Quer dar um golpe? Seu salário não vai dar conta desse empréstimo")
-    print("\n","=-="*10,"\n",f"\033[0;31m{'NEGADO'.center(30)}\033[m","\n","=-="*10,"\n")
+    print("\nQuer dar um golpe? Seu salário de não vai dar conta desse empréstimo\n")
+    print("\n","=-="*10)
+    criar_aviso("NEGADO".center(30),cores.negrito,cores.vermelho)
+    print("","=-="*10,"\n")
+    print(f'\n Suas prestações sairiam no valor de R${limite:.2f}')
 
 else:
 
-    print("\n","=-="*10,"\n"f"\033[0;32m{'Tudo certo!'.center(30)}\033[m""\n","=-="*10,)
-
+    print("\n","=-="*10)
+    criar_aviso("Tudo certo!".center(30),cores.normal,cores.verde)
+    print("","=-="*10,"\n")
     print(f'\n Suas prestações sairão no valor de R${limite:.2f}')

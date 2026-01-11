@@ -1,30 +1,43 @@
 """
-Crie um programa que leia duas notas de um aluno e calcule sua média,
-mostrando uma mensagem no final, de acordo com a média atingida:
-- Média abaixo de 5.0: Reprovado
-- Média entre 5.0 e 6.9: Recuperação
-- Média 7.0 ou superior: Aprovado
+Faça um programa que leia o ano de nascimento de um jovem e informe, de acordo com sua tvida:
+- Se ele ainda vai se alistar ao serviço militar.
+- Se é a hora de se alistar
+- Se já passou do tempo do alistamento
+Seu programa também deverá mostrar o tempo que falta ou que passou do prazo
 """
-atividades = int(input("Quantas atividades foram feitas?: "))
 
-lista = []
+import datetime
 
-total = 0
+hoje = datetime.date.today()
 
-for i in range(atividades):
-    nota = float((input(f"Qual foi a {i+1}° nota do aluno? :")).replace(",","."))
-    lista.append(nota)
 
-for i in range(len(lista)):
-    total += float(lista[i])
 
-media = total/len(lista)
+ano = int(input("Qual o ano do seu nascimento?"))
+mes = int(input("Qual o mês do seu nascimento? (em número)"))
+dia = int(input("Qual o dia do seu nascimento?"))
 
-if media < 5:
-    print(f"Média final, {media:.2f}:\033[;31m REPROVADO\033[m")
-elif media >= 5 and media < 7:
-    print (f"Média final, {media:.2f}: \033[;33m RECUPERAÇÃO\033[m")
-elif media >= 7 and media <= 10:
-    print (f"Média final, {media:.2f}: \033[;32m APROVADO\033[m")
-else:
-    print (f"Média final, 10:\033[;32m APROVADO\033[m")
+nascimento = datetime.date(ano,mes,dia)
+
+tvida = (hoje - nascimento).days
+
+idade = tvida//365
+mesv = (tvida%365)//30
+diav = (tvida%365)%30
+
+if mesv == 0:
+    mesv +=1
+
+if diav == 0:
+    mesv +=1
+
+
+ftvida = datetime.date(idade, mesv, diav)
+
+
+if idade < 18:
+    print(f"Você precisará esperar {17-idade} anos e {13-hoje.month-mesv} meses para se alistar")
+    
+elif idade == 18:
+    print(f"Você está no momento certo de se alistar!")
+elif idade > 18:
+    print(f"Você passou do tempo em se alistar em {idade-18} anos {mesv} meses")
