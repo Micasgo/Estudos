@@ -12,7 +12,6 @@ if num != 0:
                 print(f"O número {num} não é primo")
                 break
 
-
     if i == num-1:
         print(f"O número {num} é primo")
 elif num == 0:
