@@ -39,4 +39,5 @@ Seus números são: {n1} e {n2}
         print("Adeus!")
     else:
         print("Opção não reconhecida, tente novamente\n","-="*25,"\n")
+        
     sleep(1)

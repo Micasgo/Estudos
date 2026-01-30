@@ -10,6 +10,7 @@ chute = -1
 num = 0
 tentativas = 0
 
+"""
 print("\033[;32m\nVamos jogar um jogo!\n\033[m","-="*10)
 sleep(1)
 print("\nVou pensar em um número entre 1 e 10")
@@ -25,4 +26,28 @@ while chute != num:
         print(f"\nErrado, eu pensei no número {num}")
         tentativas += 1
 
-print(f"\nForam {tentativas} tentativas")
+print(f"\nFoi/foram {tentativas} tentativa(s)")
+"""
+
+num = randint(1,10)
+
+print("\033[;32m\nVamos jogar um jogo!\n\033[m","-="*10)
+sleep(1)
+print("\nVou pensar em um número entre 1 e 10")
+sleep(1)
+
+while chute != num:
+    
+    chute = int(input("\nAdivinhe o número que eu pensei: "))
+    if num == chute:
+        print("\n\033[;32mParabêns você acertou!\033[m")
+        tentativas += 1
+    else:
+        print(f"\nErrado")
+        tentativas += 1
+        if chute > num:
+            print("\nMenos")
+        else:
+            print("\nMais")
+
+print(f"\nFoi/foram {tentativas} tentativa(s)")
