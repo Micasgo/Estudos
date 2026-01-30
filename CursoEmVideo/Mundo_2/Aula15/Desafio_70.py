@@ -23,6 +23,7 @@ while True:
         min = preco
         barato = produto
     condicao = input("Quer continuar? (S/N): ").strip().upper()[0]
+    while condicao not in "SN": condicao = input("Quer continuar? (S/N): ").strip().upper()[0]
     if condicao == "N": break
 
 print(f"""\n

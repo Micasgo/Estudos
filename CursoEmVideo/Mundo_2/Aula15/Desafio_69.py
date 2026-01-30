@@ -14,11 +14,13 @@ while True:
     print(f"Pessoa {cont}")
     idade = int(input("Qual a idade?: ").strip())
     sexo = input("Qual o sexo (M/F)?: ").strip().upper()[0]
+    while sexo not in "MF": sexo = input("Qual o sexo? (M/F): ").strip().upper()[0]
     if idade > 18: mais18 += 1
     if sexo == "M": homens += 1
     if sexo == "F" and idade < 20: mulher20anos += 1
     condicao = input("\nQuer Continuar? (S/N): ").strip().upper()[0]
-    if condicao != "S": break
+    while condicao not in "SN": condicao = input("\nQuer Continuar? (S/N): ").strip().upper()[0]
+    if condicao == "N": break
 print("-="*10)
 print(f"""
 De {cont} pessoa(s)
