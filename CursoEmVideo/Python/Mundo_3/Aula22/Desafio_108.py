@@ -6,7 +6,7 @@ from utilidadesCeV import moeda
 from funcoes import inputs
 
 sal = inputs.numinput("Qual o seu salário?",opcao=float)
-porcento = desconto = inputs.numinput("Qual a porcentagem para a análise?")
+porcento = inputs.numinput("Qual a porcentagem para a análise?")
 
 print(f"Caso aumente será {moeda.moeda(moeda.aumentar(sal,porcento))}")
 print(f"Se diminuir será {moeda.moeda(moeda.diminuir(sal,porcento))}")

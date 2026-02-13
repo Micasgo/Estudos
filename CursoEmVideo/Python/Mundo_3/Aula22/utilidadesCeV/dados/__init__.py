@@ -10,7 +10,7 @@ def leiaDinheiro():
         if len(din) < 1:
             print("Valor não reconhecido")
         elif "." in din and len(din)<= 1:
-                print("Valor não reconhecido")
+             print("Valor não reconhecido")
         elif "." in din:
             din = float(din)
             break
